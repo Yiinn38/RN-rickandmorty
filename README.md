@@ -1,8 +1,8 @@
-# 🎬 Rick and Morty Explorer
+# Rick and Morty Explorer
 
 Una aplicación mobile profesional que permite explorar el universo de Rick and Morty a través de una interfaz intuitiva y moderna. Busca personajes, descubre ubicaciones y explora episodios de la serie.
 
-## 🎯 Características
+## Características
 
 - **Búsqueda avanzada** de personajes por nombre, especie, estado y género
 - **Exploración de ubicaciones** con información sobre residentes
@@ -11,7 +11,7 @@ Una aplicación mobile profesional que permite explorar el universo de Rick and 
 - **Datos en tiempo real** de la API oficial de Rick and Morty
 - **Performance optimizado** con debounce en búsquedas
 
-## 📁 Estructura del Proyecto
+##  Estructura del Proyecto
 
 ```
 app/
@@ -64,7 +64,7 @@ app/
     └── helpers.ts                # Funciones auxiliares
 ```
 
-## 🚀 Instalación y Setup
+##  Instalación y Setup
 
 ### Requisitos Previos
 
@@ -96,7 +96,7 @@ app/
    npm start
    ```
 
-## ▶️ Ejecutar la Aplicación
+## Ejecutar la Aplicación
 
 ### Desde Expo Go
 ```bash
@@ -125,7 +125,7 @@ npm run web
 npm start -- --web
 ```
 
-## 🏗️ Arquitectura y Patrones
+##  Arquitectura y Patrones
 
 ### Separación de Responsabilidades
 
@@ -153,7 +153,7 @@ State Update → Re-render Components
 UI Update
 ```
 
-## 📦 Componentes Principales
+##  Componentes Principales
 
 ### Screens
 
@@ -251,7 +251,7 @@ Navegación inferior entre secciones
 ```
 Modal con filtros para personajes
 
-## 🎣 Custom Hooks
+##  Custom Hooks
 
 ### **useRickAndMortyData**
 
@@ -288,7 +288,7 @@ const {
 - Manejo de errores
 - Cleanup de efectos
 
-## 🔌 Servicios API
+##  Servicios API
 
 ### **api.ts**
 
@@ -325,7 +325,7 @@ Obtiene la primera página de personajes
 const response = await fetchInitialCharacters();
 ```
 
-## 🎨 Constantes y Temas
+##  Constantes y Temas
 
 ### Colores (constants/colors.ts)
 
@@ -356,7 +356,7 @@ export const GENDERS = ['All', 'Female', 'Male', 'Genderless', 'Unknown'];
 export const SEARCH_DELAY_MS = 260;
 ```
 
-## 📝 Tipos TypeScript
+##  Tipos TypeScript
 
 ### Character
 ```tsx
@@ -398,7 +398,7 @@ interface Episode {
 }
 ```
 
-## 🧪 Linting y Calidad de Código
+##  Linting y Calidad de Código
 
 ```bash
 # Ejecutar ESLint
@@ -407,7 +407,7 @@ npm run lint
 # El proyecto mantiene zero warnings
 ```
 
-## 📚 Recursos
+##  Recursos
 
 - [API Rick and Morty](https://rickandmortyapi.com)
 - [Expo Documentation](https://docs.expo.dev)

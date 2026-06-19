@@ -55,7 +55,7 @@ export default function DetailModal({
               <Ionicons name="arrow-back" size={24} color={colors.greenDeep} />
             </TouchableOpacity>
             <Text numberOfLines={1} style={styles.detailBrand}>
-              {type === 'episode' ? item.name : 'R&M EXPLORER'}
+              {type === 'episode' ? item.name : 'Wubba Lubba Dub-Hub'}
             </Text>
             <TouchableOpacity style={styles.headerIcon}>
               <Ionicons
@@ -112,7 +112,7 @@ const styles = StyleSheet.create({
     flex: 1,
     textAlign: 'center',
     color: colors.greenDeep,
-    fontSize: 20,
+    fontSize: 22,
     fontWeight: '900',
   },
   headerIcon: {

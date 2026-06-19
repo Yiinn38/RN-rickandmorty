@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
   TouchableOpacity,
   View,
@@ -31,7 +31,9 @@ export function ExplorerHeader({
   onFilter,
   onOpenFilters,
 }: ExplorerHeaderProps) {
-  let title = 'R&M Explorer';
+  const [isSearchVisible, setIsSearchVisible] = useState(false);
+
+  let title = 'Characters';
   let subtitle = 'Find dimension travelers across the multiverse.';
   let placeholder = 'Search characters...';
 
@@ -50,35 +52,38 @@ export function ExplorerHeader({
   return (
     <View style={styles.header}>
       <View style={styles.topBar}>
-        <TouchableOpacity style={styles.headerIcon}>
-          <Ionicons name="menu" size={25} color={colors.greenDeep} />
-        </TouchableOpacity>
-        <Text style={styles.brand}>R&M EXPLORER</Text>
-        <TouchableOpacity style={styles.headerIcon}>
-          <Ionicons name="search" size={23} color={colors.greenDeep} />
-        </TouchableOpacity>
+        <Text style={styles.brand}>Wubba Lubba Dub-Hub</Text>
       </View>
 
-      <Text style={styles.screenTitle}>{title}</Text>
+      <View style={styles.titleRow}>
+        <Text style={styles.screenTitle}>{title}</Text>
+        <TouchableOpacity 
+          onPress={() => setIsSearchVisible(!isSearchVisible)}
+          style={styles.searchToggle}>
+          <Ionicons name="search" size={24} color={colors.ink} />
+        </TouchableOpacity>
+      </View>
       <Text style={styles.screenSubtitle}>{subtitle}</Text>
 
-      <View style={styles.searchGlass}>
-        <Ionicons name="search" size={21} color="#6c776f" />
-        <TextInput
-          placeholder={placeholder}
-          placeholderTextColor="#7f8a82"
-          value={query}
-          onChangeText={onQuery}
-          style={styles.searchInput}
-          autoCorrect={false}
-          returnKeyType="search"
-        />
-        {tab === 'characters' ? (
-          <TouchableOpacity onPress={onOpenFilters} style={styles.roundAction}>
-            <Ionicons name="options-outline" size={20} color="#10391f" />
-          </TouchableOpacity>
-        ) : null}
-      </View>
+      {isSearchVisible && (
+        <View style={styles.searchGlass}>
+          <Ionicons name="search" size={21} color="#6c776f" />
+          <TextInput
+            placeholder={placeholder}
+            placeholderTextColor="#7f8a82"
+            value={query}
+            onChangeText={onQuery}
+            style={styles.searchInput}
+            autoCorrect={false}
+            returnKeyType="search"
+          />
+          {tab === 'characters' ? (
+            <TouchableOpacity onPress={onOpenFilters} style={styles.roundAction}>
+              <Ionicons name="options-outline" size={20} color="#10391f" />
+            </TouchableOpacity>
+          ) : null}
+        </View>
+      )}
 
       <ScrollView
         horizontal
@@ -123,14 +128,18 @@ export function ExplorerHeader({
 const styles = StyleSheet.create({
   header: {
     paddingHorizontal: 24,
-    paddingTop: 10,
-    paddingBottom: 18,
+    paddingTop: 40,
+    paddingBottom: 24,
+    marginBottom: 20,
+    backgroundColor: colors.mint,
+    borderBottomLeftRadius: 28,
+    borderBottomRightRadius: 28,
   },
   topBar: {
     height: 58,
     alignItems: 'center',
     flexDirection: 'row',
-    justifyContent: 'space-between',
+    justifyContent: 'flex-start',
   },
   headerIcon: {
     width: 44,
@@ -140,17 +149,30 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   brand: {
-    flex: 1,
     color: colors.greenDeep,
-    fontSize: 23,
+    fontSize: 28,
     fontWeight: '900',
-    marginLeft: 8,
+    textAlign: 'left',
+    marginLeft: 0,
+  },
+  titleRow: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    marginTop: 28,
   },
   screenTitle: {
     color: colors.ink,
-    fontSize: 32,
+    fontSize: 24,
     fontWeight: '900',
-    marginTop: 28,
+  },
+  searchToggle: {
+    width: 44,
+    height: 44,
+    borderRadius: 22,
+    backgroundColor: colors.soft,
+    alignItems: 'center',
+    justifyContent: 'center',
   },
   screenSubtitle: {
     color: colors.muted,

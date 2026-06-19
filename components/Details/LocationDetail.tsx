@@ -116,7 +116,7 @@ const styles = StyleSheet.create({
   },
   locationHeroText: {
     position: 'absolute',
-    color: colors.mint,
+    color: '#ffffff',
     fontSize: 16,
     fontWeight: '700',
     textAlign: 'center',

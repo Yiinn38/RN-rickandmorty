@@ -6,21 +6,21 @@ import {
   View,
   StyleSheet,
 } from 'react-native';
-import { useRickAndMortyData } from '../hooks/useRickAndMortyData';
-import { SPECIES, LOCATIONS, SEASONS } from '../constants/config';
-import { colors } from '../constants/colors';
-import { DetailSelection } from '../types';
+import { useRickAndMortyData } from '../../hooks/useRickAndMortyData';
+import { SPECIES, LOCATIONS, SEASONS } from '../../constants/config';
+import { colors } from '../../constants/colors';
+import { DetailSelection } from '../../types';
 
-import { LoadingScreen } from '../components/Common/LoadingScreen';
-import { ExplorerHeader } from '../components/Header/ExplorerHeader';
-import { CharacterCard } from '../components/Cards/CharacterCard';
-import { LocationCard } from '../components/Cards/LocationCard';
-import { EpisodeCard } from '../components/Cards/EpisodeCard';
-import { BottomTabs } from '../components/Common/BottomTabs';
-import { FilterSheet } from '../components/Common/FilterSheet';
-import { DetailModal } from './DetailModal';
+import { LoadingScreen } from '../../components/Common/LoadingScreen';
+import { ExplorerHeader } from '../../components/Header/ExplorerHeader';
+import { CharacterCard } from '../../components/Cards/CharacterCard';
+import { LocationCard } from '../../components/Cards/LocationCard';
+import { EpisodeCard } from '../../components/Cards/EpisodeCard';
+import { BottomTabs } from '../../components/Common/BottomTabs';
+import { FilterSheet } from '../../components/Common/FilterSheet';
+import DetailModal from './DetailModal';
 
-export function ExplorerScreen() {
+export default function ExplorerScreen() {
   const [selected, setSelected] = useState<DetailSelection | null>(null);
   const [filtersOpen, setFiltersOpen] = useState(false);
 
@@ -151,3 +151,4 @@ const styles = StyleSheet.create({
     height: 28,
   },
 });
+

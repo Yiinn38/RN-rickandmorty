@@ -22,3 +22,4 @@ export const globalStyles = StyleSheet.create({
 });
 
 export { colors };
+

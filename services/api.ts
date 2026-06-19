@@ -63,3 +63,4 @@ export async function fetchEpisodes(): Promise<Episode[]> {
 export async function fetchInitialCharacters(): Promise<ApiResponse<Character>> {
   return fetchJson(`${API_BASE}/character`);
 }
+

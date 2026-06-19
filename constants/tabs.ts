@@ -5,3 +5,4 @@ export const TABS: TabConfig[] = [
   { key: 'locations', label: 'Locations', icon: 'earth' },
   { key: 'episodes', label: 'Episodes', icon: 'movie-open-outline' },
 ];
+

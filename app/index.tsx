@@ -1,4 +1,4 @@
 import React from 'react';
-import { ExplorerScreen } from './screens/ExplorerScreen';
+import ExplorerScreen from './screens/ExplorerScreen';
 
 export default ExplorerScreen;

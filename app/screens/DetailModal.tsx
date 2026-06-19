@@ -9,11 +9,11 @@ import {
   StyleSheet,
 } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
-import { Character, Location, Episode, DetailSelection } from '../types';
-import { CharacterDetail } from '../components/Details/CharacterDetail';
-import { LocationDetail } from '../components/Details/LocationDetail';
-import { EpisodeDetail } from '../components/Details/EpisodeDetail';
-import { colors } from '../constants/colors';
+import { Character, Location, Episode, DetailSelection } from '../../types';
+import { CharacterDetail } from '../../components/Details/CharacterDetail';
+import { LocationDetail } from '../../components/Details/LocationDetail';
+import { EpisodeDetail } from '../../components/Details/EpisodeDetail';
+import { colors } from '../../constants/colors';
 
 interface DetailModalProps {
   selected: DetailSelection | null;
@@ -25,7 +25,7 @@ interface DetailModalProps {
   onOpenCharacter: (character: Character) => void;
 }
 
-export function DetailModal({
+export default function DetailModal({
   selected,
   characters,
   episodes,
@@ -123,3 +123,4 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
 });
+
